@@ -1,0 +1,11 @@
+<schema adapter="testpagri">
+
+	<element tablename="test_pagriphf">
+		<field name="objid" primary="true" prefix="PHF"/>
+		<field name="name" required="true" caption="Facility Name" searchable="true" />
+		<field name="code" required="false" searchable="true" />
+		<field name="description" required="false" searchable="true" />
+
+	</element>
+
+</schema>

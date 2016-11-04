@@ -1,0 +1,14 @@
+<schema adapter="testpagri">
+
+	<element tablename="test_pagrifarmerphf">
+		<field name="objid" primary="true" prefix="FF"/>
+		<field name="parentid" required="true" />
+		<field name="phf_objid" required="true"  />
+		<field name="phf_name" required="true"  />
+		<field name="phfnumber" required="true" />
+		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" required="false">
+			<key field="parentid" target="objid" />
+		</complex>		
+	</element>
+
+</schema>

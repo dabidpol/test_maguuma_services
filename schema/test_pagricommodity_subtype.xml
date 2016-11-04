@@ -1,0 +1,12 @@
+<schema adapter="testpagri">
+
+	<element tablename="test_pagricommodity_subtype">
+		<field name="objid"  primary="true" prefix="CST"  />
+		<field name="parentid" visible="false" required="true" searchable="true" />
+		<field name="parentname" visible="false" required="true" />
+		<field name="name" required="true" searchable="true" />
+		<field name="code" required="false" searchable="true" />
+		<field name="description" required="false" searchable="true" />
+	</element>
+
+</schema>

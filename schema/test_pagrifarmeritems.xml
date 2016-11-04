@@ -1,0 +1,21 @@
+<schema adapter="testpagri">
+	<element tablename="test_pagrifarmeritems">
+		<field name="objid" primary="true" prefix="FI"/>
+		<field name="parentid" required="true" />
+		<field name="address_text" required="true"  />
+		<field name="commodity_objid" visible="false" required="true" />
+		<field name="commodity_name" required="true" />
+		<field name="commoditytype_objid" visible="false" required="true" />
+		<field name="commoditytype_name" required="true" />
+		<field name="commoditysubtype_objid" visible="false" required="true" />
+		<field name="commoditysubtype_name" required="true" />
+		<field name="tenurialstatus" required="true" />
+		<field name="unit" required="true" />
+		<field name="qty" required="true" type="decimal" />
+		<field name="maintainer" />
+		<field name="remarks" />
+		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" required="false">
+			<key field="parentid" target="objid" />
+		</complex>		
+	</element>
+</schema>

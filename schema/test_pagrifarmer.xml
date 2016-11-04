@@ -1,0 +1,32 @@
+<schema adapter="testpagri">
+
+	<element tablename="test_pagrifarmer">
+		<field name="objid" primary="true" prefix="FARM"/>
+		<field name="farmer_objid" required="true" visible="false"/>
+		<field name="farmer_name" required="true"  caption="Farmer Name" indexed="true" searchable="true"/>
+		<field name="farmer_address_text" required="true" caption="Farmer Address" indexed="true"/>
+		<field name="gender" required="true" caption="Gender" indexed="true"/>
+		<field name="birthdate" required="true" caption="Birthdate" type="date" indexed="true"/>
+		<field name="civilstatus" required="true" caption="Civil Status" indexed="true"/>
+		<field name="spouse_objid" required="true" visible="false" indexed="true"/>
+		<field name="spouse_name" required="true"  caption="Spouse Name" indexed="true" searchable="true"/>
+
+		<field name="createdby_objid" visible="false"/>
+		<field name="createdby_name" visible="false"/>
+		<field name="dtcreated" visible="false"/>
+
+		<complex name="farmerItems" ref="test_pagrifarmeritems" jointype="one-to-many">
+			<key field="objid" target="parentid" /> 		
+		</complex>
+
+		<complex name="facilityItems" ref="test_pagrifarmerphf" jointype="one-to-many">
+			<key field="objid" target="parentid" /> 		
+		</complex> 
+
+		<!-- <complex name="parent" ref="entityindividual" jointype="one-to-one" includefields=" birthdate,gender,civilstatus" required="false">
+			<key field="farmer_objid" target="objid" />
+		</complex>		 -->
+
+	</element>
+
+</schema>
