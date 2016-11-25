@@ -3,6 +3,8 @@
 		<field name="objid" primary="true" prefix="FI"/>
 		<field name="parentid" required="true" />
 		<field name="address_text" required="true"  />
+		<field name="address_barangay_objid" required="true"  />
+		<field name="address_barangay_parent_objid" required="true"  />
 		<field name="commodity_objid" visible="false" required="true" />
 		<field name="commodity_name" required="true" />
 		<field name="commoditytype_objid" visible="false" required="true" />
