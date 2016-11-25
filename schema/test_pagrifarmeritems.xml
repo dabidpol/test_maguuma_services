@@ -7,14 +7,14 @@
 		<field name="commodity_name" required="true" />
 		<field name="commoditytype_objid" visible="false" required="true" />
 		<field name="commoditytype_name" required="true" />
-		<field name="commoditysubtype_objid" visible="false" required="true" />
-		<field name="commoditysubtype_name" required="true" />
+		<field name="commoditysubtype_objid" visible="false" />
+		<field name="commoditysubtype_name"  />
 		<field name="tenurialstatus" required="true" />
 		<field name="unit" required="true" />
 		<field name="qty" required="true" type="decimal" />
 		<field name="maintainer" />
 		<field name="remarks" />
-		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" required="false">
+		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" includefields="objid,farmer_objid,farmer_name,farmer_address_text,spouse_objid,spouse_name,state,createdby_objid,createdby_name,dtcreated" required="false">
 			<key field="parentid" target="objid" />
 		</complex>		
 	</element>

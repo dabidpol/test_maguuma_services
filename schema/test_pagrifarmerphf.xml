@@ -6,7 +6,7 @@
 		<field name="phf_objid" required="true"  />
 		<field name="phf_name" required="true"  />
 		<field name="phfnumber" required="true" />
-		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" required="false">
+		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" includefields="objid,farmer_objid,farmer_name,farmer_address_text,spouse_objid,spouse_name,state,createdby_objid,createdby_name,dtcreated" required="false">
 			<key field="parentid" target="objid" />
 		</complex>		
 	</element>

@@ -1,0 +1,27 @@
+import com.rameses.annotations.*;
+import com.rameses.common.*;
+import com.rameses.services.extended.*;
+
+public class FarmerApproveService extends ActiveCrudListService
+{
+	@ActiveDB(value='test_pagrifarmer', em='testpagri')
+	def em;
+
+	@DataContext("test_pagrifarmer")
+	def tp;
+
+
+	@ProxyMethod
+	public def changestate( o ) {
+		//beforeUpdate(o)
+		//tp.updatestate(o);
+
+		o = tp.find( ['objid': o.objid ] ).update([state:'APPROVED']);
+
+		return o;
+        	
+	}
+
+}
+	
+

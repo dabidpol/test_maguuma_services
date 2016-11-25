@@ -5,11 +5,10 @@
 		<field name="farmer_objid" required="true" visible="false"/>
 		<field name="farmer_name" required="true"  caption="Farmer Name" indexed="true" searchable="true"/>
 		<field name="farmer_address_text" required="true" caption="Farmer Address" indexed="true"/>
-		<field name="gender" required="true" caption="Gender" indexed="true"/>
-		<field name="birthdate" required="true" caption="Birthdate" type="date" indexed="true"/>
-		<field name="civilstatus" required="true" caption="Civil Status" indexed="true"/>
 		<field name="spouse_objid" required="true" visible="false" indexed="true"/>
 		<field name="spouse_name" required="true"  caption="Spouse Name" indexed="true" searchable="true"/>
+		<field name="state" required="true"  caption="State" indexed="true" defaultValue="DRAFT" searchable="true"/>
+
 
 		<field name="createdby_objid" visible="false"/>
 		<field name="createdby_name" visible="false"/>
