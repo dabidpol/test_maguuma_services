@@ -8,10 +8,7 @@
 		<field name="code" required="false" searchable="true" />
 		<field name="description" required="false" searchable="true" />
 
-		<complex name="parent" ref="test_pagricommodity" jointype="many-to-one" includefields="code,name,objid" 
-			required="false">
-			<key field="parentid" target="objid" />
-		</complex>		
+		
 	</element>
 
 </schema>

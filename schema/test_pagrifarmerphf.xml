@@ -2,10 +2,10 @@
 
 	<element tablename="test_pagrifarmerphf">
 		<field name="objid" primary="true" prefix="FF"/>
-		<field name="parentid" required="true" />
-		<field name="phf_objid" required="true"  />
-		<field name="phf_name" required="true"  />
-		<field name="phfnumber" required="true" />
+		<field name="parentid" />
+		<field name="phf_objid" />
+		<field name="phf_name" />
+		<field name="phfnumber" />
 		<complex name="parent" ref="test_pagrifarmer" jointype="many-to-one" includefields="objid,farmer_objid,farmer_name,farmer_address_text,spouse_objid,spouse_name,state,createdby_objid,createdby_name,dtcreated" required="false">
 			<key field="parentid" target="objid" />
 		</complex>		

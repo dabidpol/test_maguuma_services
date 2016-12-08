@@ -5,46 +5,33 @@ import com.rameses.services.extended.*;
 
 class FarmerService extends ActiveCrudListService 
 {
-	@DataContext("test_pagrifarmer")
-	def tp;
+	@ActiveDB(value='test_pagrifarmeritems', em='testpagri')
+	def em;
 
-	void beforeList(params){
-		if (params == null) params = [:]
-		params.searchtext = (params.searchtext ? params.searchtext :'')+'%'
+	@ProxyMethod
+	public void deleteFarmerItems(farmer){
+		em.removeFarmerItems(farmer)
 	}
 
-
-	@ProxyMethod
-	public def getColumns( params ) {
-		return [
-			[name:"code", caption:"Code", width:80],
-            [name:"name", caption:"Description", width:250],
-            [name:"state", caption:"State", width:100],
-		]	
+	public void beforeRemoveEntity(def o){
+		em.removeFarmerItems( o )
 	}
 
-	@ProxyMethod
-	public def getMachines( params ) {
-		beforeList(params)
-		return em.getMachines(params)
-	}		
-
-	@Async
-	@ProxyMethod
-	public def exportData(params) {
-		return [
-			filetype: 'machine',
-			machines: getMachines([:])
-		] 
-	}
-
-	@Async
-	@ProxyMethod
-	public def importData( data ) {
-		if (data.filetype != 'machine')
-			throw new Exception('Invalid data.')
-		data.machines.each{
-			save(it)
-		}
+	public void beforeUpdate( def o ) {
+		em.removeFarmerItems( o )
 	}	
+
+	public void afterUpdate( def o ) {
+		o.farmerItems.each{ 
+			it.test_pagrifarmer = o 
+			em.save(it, 'test_pagrifarmeritems') 
+		}
+		
+	}
+
+	public void afterOpen( def o ) {
+		o.farmerItems =  em.getFarmerItems(o).each { it.newitem =  false }
+	}
+
+		
 }

@@ -7,6 +7,8 @@
 		<field name="name" required="true" searchable="true" />
 		<field name="code" required="false" searchable="true" />
 		<field name="description" required="false" searchable="true" />
+
+		
 	</element>
 
 </schema>

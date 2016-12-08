@@ -2,11 +2,12 @@
 
 	<element tablename="test_pagrifarmer">
 		<field name="objid" primary="true" prefix="FARM"/>
+		<field name="farmerid" required="true" caption="Farmer ID" indexed="true" searchable="true"/>
 		<field name="farmer_objid" required="true" visible="false"/>
 		<field name="farmer_name" required="true"  caption="Farmer Name" indexed="true" searchable="true"/>
 		<field name="farmer_address_text" required="true" caption="Farmer Address" indexed="true"/>
-		<field name="spouse_objid" required="true" visible="false" indexed="true"/>
-		<field name="spouse_name" required="true"  caption="Spouse Name" indexed="true" searchable="true"/>
+		<field name="spouse_objid" visible="false" indexed="true"/>
+		<field name="spouse_name" caption="Spouse Name" indexed="true" searchable="true"/>
 		<field name="state" required="true"  caption="State" indexed="true" defaultValue="DRAFT" searchable="true"/>
 
 

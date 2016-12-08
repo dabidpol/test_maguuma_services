@@ -6,9 +6,7 @@
 		<field name="code" required="false" searchable="true" indexed="true"/>
 		<field name="description" required="false" searchable="true" indexed="true"/>
 
-		<complex name="items" ref="test_pagricommodity_type" jointype="one-to-many" orderBy="name">
-			<key field="objid" target="parentid" /> 		
-		</complex> 
+		
 	</element>
 
 </schema>
